@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>说文解字AR - 海外汉语学习与文化传播平台</title>
+  <!-- 引入Bootstrap5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- 引入Font Awesome图标（丰富图标库） -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+  <!-- 引入自定义样式 -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- 导航栏 - 主次分明+图标 -->
+  <nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <div class="logo-icon">
+          <i class="fa fa-book"></i>
+        </div>
+        说文解字AR
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link active" href="index.html"><i class="fa fa-home me-1"></i> 首页</a></li>
+          <li class="nav-item"><a class="nav-link" href="learn-center.html"><i class="fa fa-graduation-cap me-1"></i> 学习中心</a></li>
+          <li class="nav-item"><a class="nav-link" href="ar-workshop.html"><i class="fa fa-magic me-1"></i> AR工坊</a></li>
+          <li class="nav-item"><a class="nav-link" href="forum.html"><i class="fa fa-comments me-1"></i> 社交论坛</a></li>
+          <li class="nav-item"><a class="nav-link" href="shop.html"><i class="fa fa-shopping-bag me-1"></i> 文创商城</a></li>
+          <li class="nav-item"><a class="nav-link" href="creator-center.html"><i class="fa fa-pencil-square-o me-1"></i> 创作者中心</a></li>
+        </ul>
+        <!-- 多语言切换 -->
+        <div class="nav-item lang-switch me-3 d-flex align-items-center">
+          <a href="#" class="nav-link active text-primary" data-lang="zh"><i class="fa fa-language me-1"></i> 中文</a>
+          <span class="text-muted">|</span>
+          <a href="#" class="nav-link text-secondary" data-lang="en"><i class="fa fa-language me-1"></i> English</a>
+        </div>
+        <!-- 登录/注册入口 -->
+        <a href="login.html" class="btn btn-outline">
+          <i class="fa fa-user me-1"></i> 登录/注册
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 核心内容区 -->
+  <div class="container-custom">
+    <!-- 平台简介与特色展示 - 多彩视觉 -->
+    <section class="mb-5">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <div class="section-header">
+            <h1 class="section-title" style="font-size: 2.5rem; margin-bottom: 16px;">让汉字活起来 <br> 用AR读懂中国</h1>
+            <p class="section-desc fs-5">基于《说文解字》打造的海外汉语学习平台，融合AR字源动画、用户共创、文化传播，解决汉字"难学难懂"痛点，覆盖HSK全等级，面向15-35岁海外汉语学习者。</p>
+          </div>
+          <div class="mt-5 d-flex flex-wrap gap-3">
+            <a href="learn-center.html" class="btn btn-primary">
+              <i class="fa fa-play-circle me-1"></i> 开始学习
+            </a>
+            <a href="ar-workshop.html" class="btn btn-outline">
+              <i class="fa fa-camera me-1"></i> 体验AR
+            </a>
+            <a href="creator-center.html" class="btn btn-outline">
+              <i class="fa fa-star me-1"></i> 成为创作者
+            </a>
+          </div>
+          
+          <!-- 核心数据统计 - 多彩卡片 -->
+          <div class="row mt-5 g-3">
+            <div class="col-md-3">
+              <div class="stats-card">
+                <div class="stats-value">1500万+</div>
+                <div class="stats-label">全球注册用户</div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="stats-card">
+                <div class="stats-value" style="color: var(--level1-color);">600+</div>
+                <div class="stats-label">合作孔子学院</div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="stats-card">
+                <div class="stats-value" style="color: var(--level2-color);">5000+</div>
+                <div class="stats-label">AR汉字动画</div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="stats-card">
+                <div class="stats-value" style="color: var(--level3-color);">10万+</div>
+                <div class="stats-label">优质学习内容</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="ar-box">
+            <img src="https://picsum.photos/800/420?random=1" alt="AR汉字示例" class="img-fluid">
+            <div class="ar-overlay">
+              <h3><i class="fa fa-lightbulb-o me-1"></i> AR字源动画 - 直观理解汉字演变</h3>
+              <p>从甲骨文到楷书，沉浸式体验汉字的千年演变</p>
+            </div>
+            <button class="btn btn-primary ar-scan-btn">
+              <i class="fa fa-qrcode me-1"></i> AR扫描体验
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 平台核心特色 - 多彩图标+卡片 -->
+    <section class="mb-5">
+      <div class="section-header">
+        <h2 class="section-title">平台特色</h2>
+        <p class="section-desc">四大核心优势，打造沉浸式汉语学习体验</p>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="card-custom h-100">
+            <div class="icon-box icon-primary">
+              <i class="fa fa-magic"></i>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">AR字源动画</h3>
+              <p class="card-text text-secondary">直观展示汉字从甲骨文到楷书的演变，沉浸式理解字源与文化背景。</p>
+            </div>
+            <div class="card-footer">
+              <a href="ar-workshop.html" class="text-primary">
+                立即体验 <i class="fa fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card-custom h-100">
+            <div class="icon-box icon-level1">
+              <i class="fa fa-users"></i>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">用户共创传播</h3>
+              <p class="card-text text-secondary">创作者中心支持内容发布，成为"汉字文化传播官"，共享收益与流量。</p>
+            </div>
+            <div class="card-footer">
+              <a href="creator-center.html" class="text-primary">
+                入驻申请 <i class="fa fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card-custom h-100">
+            <div class="icon-box icon-level2">
+              <i class="fa fa-graduation-cap"></i>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">HSK分级学习</h3>
+              <p class="card-text text-secondary">对接HSK1-6级，从初级高频字到高级文化研究，精准匹配学习需求。</p>
+            </div>
+            <div class="card-footer">
+              <a href="learn-center.html" class="text-primary">
+                选择等级 <i class="fa fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card-custom h-100">
+            <div class="icon-box icon-level3">
+              <i class="fa fa-globe"></i>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">文化深度解读</h3>
+              <p class="card-text text-secondary">基于《说文解字》的专业解读，连接汉字与中国传统文化。</p>
+            </div>
+            <div class="card-footer">
+              <a href="forum.html" class="text-primary">
+                探索文化 <i class="fa fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <!-- 推荐学习内容 - 多彩卡片 -->
+    <section class="mb-5">
+      <div class="section-header">
+        <h2 class="section-title">推荐学习内容</h2>
+        <p class="section-desc">精选热门汉字与文化内容，开启你的汉字学习之旅</p>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-lg-3">
+          <div class="card-custom card-level1">
+            <div class="card-header">
+              <i class="fa fa-star me-1"></i> HSK1级 · 基础汉字
+            </div>
+            <img src="https://picsum.photos/300/200?random=2" class="card-img-top" alt="热门汉字-人">
+            <div class="card-body">
+              <h5 class="card-title">热门汉字 · 人</h5>
+              <p class="card-text text-secondary">甲骨文演变 | 基础用法</p>
+              <a href="learn-center.html" class="btn btn-level1 w-100">
+                <i class="fa fa-play me-1"></i> 开始学习
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card-custom card-level1">
+            <div class="card-header">
+              <i class="fa fa-star me-1"></i> HSK1级 · 基础汉字
+            </div>
+            <img src="https://picsum.photos/300/200?random=3" class="card-img-top" alt="热门汉字-天">
+            <div class="card-body">
+              <h5 class="card-title">热门汉字 · 天</h5>
+              <p class="card-text text-secondary">金文演变 | 日常搭配</p>
+              <a href="learn-center.html" class="btn btn-level1 w-100">
+                <i class="fa fa-play me-1"></i> 开始学习
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card-custom card-level2">
+            <div class="card-header">
+              <i class="fa fa-star-half-o me-1"></i> HSK3级 · 文化故事
+            </div>
+            <img src="https://picsum.photos/300/200?random=4" class="card-img-top" alt="文化故事-汉字起源">
+            <div class="card-body">
+              <h5 class="card-title">文化故事 · 汉字起源</h5>
+              <p class="card-text text-secondary">趣味解读 | 仓颉造字</p>
+              <a href="forum.html" class="btn btn-level2 w-100">
+                <i class="fa fa-book me-1"></i> 查看详情
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card-custom card-level2">
+            <div class="card-header">
+              <i class="fa fa-star-half-o me-1"></i> HSK3级 · AR练习
+            </div>
+            <img src="https://picsum.photos/300/200?random=5" class="card-img-top" alt="AR互动练习-山水">
+            <div class="card-body">
+              <h5 class="card-title">AR互动练习 · 山水</h5>
+              <p class="card-text text-secondary">场景互动 | 听说读写</p>
+              <a href="ar-workshop.html" class="btn btn-level2 w-100">
+                <i class="fa fa-magic me-1"></i> 体验练习
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 文创展示 - 多彩视觉 -->
+    <section>
+      <div class="section-header">
+        <h2 class="section-title">汉字主题文创</h2>
+        <p class="section-desc">将汉字文化融入生活，精选优质文创产品</p>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="card-custom text-center">
+            <img src="https://picsum.photos/200/200?random=6" class="card-img-top w-50 mx-auto mt-4" alt="龙纹书签">
+            <div class="card-body">
+              <h5 class="card-title">龙纹汉字书签</h5>
+              <p class="card-text text-secondary">¥29.9</p>
+              <a href="shop.html" class="btn btn-outline add-cart" data-product="龙纹汉字书签" data-price="29.9">
+                <i class="fa fa-shopping-cart me-1"></i> 加入购物车
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card-custom text-center">
+            <img src="https://picsum.photos/200/200?random=7" class="card-img-top w-50 mx-auto mt-4" alt="福字挂饰">
+            <div class="card-body">
+              <h5 class="card-title">福字文化挂饰</h5>
+              <p class="card-text text-secondary">¥39.9</p>
+              <a href="shop.html" class="btn btn-outline add-cart" data-product="福字文化挂饰" data-price="39.9">
+                <i class="fa fa-shopping-cart me-1"></i> 加入购物车
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card-custom text-center">
+            <img src="https://picsum.photos/200/200?random=8" class="card-img-top w-50 mx-auto mt-4" alt="汉字字帖">
+            <div class="card-body">
+              <h5 class="card-title">AR汉字临摹字帖</h5>
+              <p class="card-text text-secondary">¥49.9</p>
+              <a href="shop.html" class="btn btn-outline add-cart" data-product="AR汉字临摹字帖" data-price="49.9">
+                <i class="fa fa-shopping-cart me-1"></i> 加入购物车
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card-custom text-center">
+            <img src="https://picsum.photos/200/200?random=9" class="card-img-top w-50 mx-auto mt-4" alt="文化帆布包">
+            <div class="card-body">
+              <h5 class="card-title">汉字文化帆布包</h5>
+              <p class="card-text text-secondary">¥59.9</p>
+              <a href="shop.html" class="btn btn-outline add-cart" data-product="汉字文化帆布包" data-price="59.9">
+                <i class="fa fa-shopping-cart me-1"></i> 加入购物车
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-5">
+        <a href="shop.html" class="btn btn-primary">
+          <i class="fa fa-store me-1"></i> 查看全部文创
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <!-- 回到顶部按钮 -->
+  <button id="back-to-top" class="btn">
+    <i class="fa fa-arrow-up"></i>
+  </button>
+
+  <!-- 底部 - 主次分明 -->
+  <footer class="footer-custom">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="footer-brand">
+            <div class="logo-icon">
+              <i class="fa fa-book"></i>
+            </div>
+            说文解字AR
+          </div>
+          <p class="text-muted">基于《说文解字》的海外汉语学习平台，用AR技术让汉字活起来</p>
+          <div class="mt-3 d-flex gap-3">
+            <a href="#" class="text-white"><i class="fa fa-facebook-square fa-lg"></i></a>
+            <a href="#" class="text-white"><i class="fa fa-twitter-square fa-lg"></i></a>
+            <a href="#" class="text-white"><i class="fa fa-instagram fa-lg"></i></a>
+            <a href="#" class="text-white"><i class="fa fa-youtube-play fa-lg"></i></a>
+          </div>
+        </div>
+        <div class="col-md-2 mb-4">
+          <h5 class="text-white mb-3">学习资源</h5>
+          <div class="footer-links">
+            <a href="#">HSK分级课程</a>
+            <a href="#">AR字源动画</a>
+            <a href="#">文化解读</a>
+            <a href="#">练习题库</a>
+          </div>
+        </div>
+        <div class="col-md-2 mb-4">
+          <h5 class="text-white mb-3">创作者中心</h5>
+          <div class="footer-links">
+            <a href="#">入驻申请</a>
+            <a href="#">创作教程</a>
+            <a href="#">收益说明</a>
+            <a href="#">创作者社区</a>
+          </div>
+        </div>
+        <div class="col-md-2 mb-4">
+          <h5 class="text-white mb-3">关于我们</h5>
+          <div class="footer-links">
+            <a href="#">平台介绍</a>
+            <a href="#">合作加盟</a>
+            <a href="#">联系我们</a>
+            <a href="#">隐私政策</a>
+          </div>
+        </div>
+        <div class="col-md-2 mb-4">
+          <h5 class="text-white mb-3">帮助中心</h5>
+          <div class="footer-links">
+            <a href="#">常见问题</a>
+            <a href="#">使用教程</a>
+            <a href="#">意见反馈</a>
+            <a href="#">技术支持</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 说文解字AR汉语学习平台 版权所有</p>
+        <p>海外汉语学习与文化传播平台 | 对接HSK1-6级 | AR字源动画</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 引入JS依赖 -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- 引入自定义JS -->
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,1227 @@
+/* 全局样式重置 + 基础变量定义（多彩配色体系） */
+:root {
+  /* 主色调 - 中文红 */
+  --primary-color: #c7254e;
+  --primary-light: #d94e6f;
+  --primary-dark: #a81e3f;
+  /* 辅助色 - 分级配色 */
+  --level1-color: #4285f4; /* HSK1-2级：科技蓝 */
+  --level2-color: #fbbc05; /* HSK3-4级：活力黄 */
+  --level3-color: #34a853; /* HSK5-6级：成长绿 */
+  /* 功能色 */
+  --success-color: #52c41a;
+  --warning-color: #faad14;
+  --danger-color: #ff4d4f;
+  --info-color: #1890ff;
+  /* 中性色 */
+  --text-primary: #1f2329;
+  --text-secondary: #4e5969;
+  --text-tertiary: #86909c;
+  --bg-light: #f7f8fa;
+  --bg-white: #ffffff;
+  --border-color: #e5e6eb;
+  /* 渐变配色 */
+  --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+  --gradient-level1: linear-gradient(135deg, var(--level1-color), #6aa9ff);
+  --gradient-level2: linear-gradient(135deg, var(--level2-color), #ffd568);
+  --gradient-level3: linear-gradient(135deg, var(--level3-color), #6fda8c);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+}
+
+body {
+  background-color: var(--bg-light);
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary-light);
+  text-decoration: none;
+}
+
+/* 导航栏样式 - 主次分明 */
+.navbar-custom {
+  background-color: var(--bg-white);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--primary-color) !important;
+}
+
+.navbar-brand .logo-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--gradient-primary);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-right: 10px;
+}
+
+.navbar-nav .nav-link {
+  color: var(--text-secondary) !important;
+  font-weight: 500;
+  padding: 12px 16px !important;
+  position: relative;
+}
+
+.navbar-nav .nav-link.active {
+  color: var(--primary-color) !important;
+}
+
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background: var(--gradient-primary);
+  transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+  width: 80%;
+}
+
+/* 核心容器 */
+.container-custom {
+  flex: 1;
+  padding: 40px 0;
+  width: 90%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* 板块标题样式 - 强化视觉层级 */
+.section-header {
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.section-desc {
+  font-size: 1rem;
+  color: var(--text-tertiary);
+  max-width: 800px;
+}
+
+.section-title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: calc(100% + 8px);
+  width: 60px;
+  height: 4px;
+  background: var(--gradient-primary);
+  border-radius: 2px;
+}
+
+/* 卡片样式 - 多彩配色+hover效果 */
+.card-custom {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background-color: var(--bg-white);
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.card-custom:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+/* 分级卡片配色 */
+.card-level1 {
+  border-top: 4px solid var(--level1-color);
+}
+.card-level1 .card-header {
+  background: var(--gradient-level1);
+}
+
+.card-level2 {
+  border-top: 4px solid var(--level2-color);
+}
+.card-level2 .card-header {
+  background: var(--gradient-level2);
+}
+
+.card-level3 {
+  border-top: 4px solid var(--level3-color);
+}
+.card-level3 .card-header {
+  background: var(--gradient-level3);
+}
+
+.card-header {
+  padding: 16px 20px;
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-footer {
+  padding: 16px 20px;
+  background-color: rgba(0,0,0,0.02);
+  border-top: 1px solid var(--border-color);
+}
+
+/* 按钮样式 - 多彩渐变+图标融合 */
+.btn-custom {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  gap: 8px;
+}
+
+.btn-primary {
+  background: var(--gradient-primary);
+  color: white;
+}
+.btn-primary:hover {
+  box-shadow: 0 4px 12px rgba(199, 37, 78, 0.3);
+  transform: translateY(-2px);
+}
+
+.btn-level1 {
+  background: var(--gradient-level1);
+  color: white;
+}
+.btn-level2 {
+  background: var(--gradient-level2);
+  color: white;
+}
+.btn-level3 {
+  background: var(--gradient-level3);
+  color: white;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+}
+.btn-outline:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+/* 图标样式 - 丰富图标系统 */
+.icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.icon-primary {
+  background: rgba(199, 37, 78, 0.1);
+  color: var(--primary-color);
+}
+.icon-level1 {
+  background: rgba(66, 133, 244, 0.1);
+  color: var(--level1-color);
+}
+.icon-level2 {
+  background: rgba(251, 188, 5, 0.1);
+  color: var(--level2-color);
+}
+.icon-level3 {
+  background: rgba(52, 168, 83, 0.1);
+  color: var(--level3-color);
+}
+
+/* AR模块样式 - 强化视觉 */
+.ar-box {
+  width: 100%;
+  height: 420px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  margin: 24px 0;
+}
+
+.ar-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ar-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.7));
+  color: white;
+}
+
+.ar-scan-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  padding: 12px 32px;
+  font-size: 1.1rem;
+}
+
+/* 学习分级样式 - 多彩卡片 */
+.learn-level {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.level-item {
+  padding: 24px;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+.level-item1 {
+  background: var(--gradient-level1);
+}
+.level-item2 {
+  background: var(--gradient-level2);
+}
+.level-item3 {
+  background: var(--gradient-level3);
+}
+
+.level-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.level-item i {
+  font-size: 48px;
+  margin-bottom: 16px;
+  opacity: 0.9;
+}
+
+.level-item h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.level-item p {
+  opacity: 0.9;
+  margin-bottom: 16px;
+}
+
+/* 统计卡片样式 */
+.stats-card {
+  padding: 20px;
+  border-radius: 12px;
+  background: var(--bg-white);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.stats-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 4px;
+}
+
+.stats-label {
+  color: var(--text-tertiary);
+  font-size: 0.9rem;
+}
+
+/* 底部样式 */
+.footer-custom {
+  background-color: var(--text-primary);
+  color: rgba(255,255,255,0.8);
+  padding: 40px 0 20px;
+  margin-top: auto;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+}
+
+.footer-brand .logo-icon {
+  width: 32px;
+  height: 32px;
+  background: var(--gradient-primary);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-right: 8px;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin: 24px 0;
+}
+
+.footer-links a {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+  color: white;
+}
+
+.footer-bottom {
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+  text-align: center;
+}
+
+/* 回到顶部按钮 */
+#back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  color: white;
+  border: none;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  box-shadow: 0 4px 12px rgba(199, 37, 78, 0.3);
+  transition: all 0.3s ease;
+  z-index: 99;
+}
+
+#back-to-top:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(199, 37, 78, 0.4);
+}
+
+/* 登录/注册页样式 */
+.login-container {
+  width: 100%;
+  max-width: 520px;
+  margin: 60px auto;
+  padding: 40px;
+  background-color: var(--bg-white);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.login-tabs {
+  display: flex;
+  margin-bottom: 30px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.login-tab {
+  flex: 1;
+  text-align: center;
+  padding: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--text-tertiary);
+  position: relative;
+}
+
+.login-tab.active {
+  color: var(--primary-color);
+}
+
+.login-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--gradient-primary);
+  border-radius: 2px 2px 0 0;
+}
+
+.form-control {
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(199, 37, 78, 0.1);
+  outline: none;
+}
+
+/* 管理后台样式 */
+.admin-sidebar {
+  background-color: var(--text-primary);
+  color: white;
+  height: calc(100vh - 64px);
+  padding: 24px 0;
+  position: fixed;
+  top: 64px;
+  left: 0;
+  width: 220px;
+  overflow-y: auto;
+}
+
+.admin-sidebar .sidebar-header {
+  padding: 0 24px 24px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.admin-sidebar a {
+  display: flex;
+  align-items: center;
+  padding: 12px 24px;
+  color: rgba(255,255,255,0.7);
+  gap: 12px;
+  transition: all 0.3s ease;
+}
+
+.admin-sidebar a:hover,
+.admin-sidebar a.active {
+  background-color: rgba(199, 37, 78, 0.2);
+  color: white;
+}
+
+.admin-content {
+  margin-left: 240px;
+  padding: 30px;
+}
+
+/* 响应式适配 */
+@media (max-width: 992px) {
+  .section-title {
+    font-size: 1.75rem;
+  }
+  
+  .ar-box {
+    height: 360px;
+  }
+  
+  .admin-sidebar {
+    width: 180px;
+  }
+  
+  .admin-content {
+    margin-left: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container-custom {
+    padding: 24px 0;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .ar-box {
+    height: 280px;
+  }
+  
+  .learn-level {
+    grid-template-columns: 1fr;
+  }
+  
+  .admin-sidebar {
+    width: 100%;
+    height: auto;
+    position: static;
+    top: auto;
+  }
+  
+  .admin-content {
+    margin-left: 0;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-nav .nav-link {
+    padding: 8px 12px !important;
+  }
+  
+  .ar-box {
+    height: 220px;
+  }
+  
+  .login-container {
+    padding: 24px;
+    margin: 30px auto;
+  }
+  
+  .stats-value {
+    font-size: 2rem;
+  }
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人简历 - 南京财经大学</title>
+    <style>
+        /* 全局样式重置与基础设置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 2rem;
+            min-height: 100vh;
+        }
+
+        /* 简历主体容器 */
+        .resume-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            border-radius: 16px;
+            overflow: hidden;
+            padding: 3rem;
+            position: relative;
+        }
+
+        /* 装饰元素 */
+        .resume-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, #4299e1, #38b2ac, #9f7aea);
+        }
+
+        /* 头部信息 - 包含照片 */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 2.5rem;
+            border-bottom: 2px solid #f0f4f8;
+            margin-bottom: 2.5rem;
+        }
+
+        /* 照片区域 */
+        .photo-section {
+            width: 120px;
+            height: 160px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 4px solid #f8f9fa;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .photo {
+            width: 100%;
+            height: 100%;
+            background-color: #e8f4f8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #4299e1;
+            font-size: 0.8rem;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* 个人信息区域 */
+        .personal-info {
+            flex: 1;
+            text-align: center;
+            padding: 0 2rem;
+        }
+
+        .name {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 0.8rem;
+            letter-spacing: 1px;
+            background: linear-gradient(90deg, #4299e1, #38b2ac);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .title {
+            font-size: 1.2rem;
+            color: #4a5568;
+            margin-bottom: 1.2rem;
+            font-weight: 500;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            font-size: 0.95rem;
+            color: #718096;
+        }
+
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-info span:hover {
+            color: #4299e1;
+            transform: translateY(-2px);
+        }
+
+        /* 主体内容 */
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+        }
+
+        /* 左侧栏 */
+        .sidebar {
+            padding-right: 1rem;
+        }
+
+        /* 右侧内容区 */
+        .main-content {
+            border-left: 2px solid #e8f4f8;
+            padding-left: 2.5rem;
+        }
+
+        /* 通用模块样式 */
+        .section {
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid #e8f4f8;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title::before {
+            content: '';
+            width: 8px;
+            height: 20px;
+            background-color: #4299e1;
+            margin-right: 0.8rem;
+            border-radius: 4px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, #4299e1, transparent);
+        }
+
+        /* 技能模块 */
+        .skills-list {
+            list-style: none;
+        }
+
+        .skill-item {
+            margin-bottom: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .skill-item:hover {
+            transform: translateX(5px);
+        }
+
+        .skill-name {
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .skill-name span {
+            color: #4299e1;
+            font-size: 0.85rem;
+        }
+
+        .skill-level {
+            width: 100%;
+            height: 10px;
+            background-color: #e2e8f0;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #4299e1, #38b2ac);
+            border-radius: 6px;
+            position: relative;
+            animation: progressAnimate 1.5s ease-out;
+        }
+
+        @keyframes progressAnimate {
+            from { width: 0; }
+            to { width: var(--progress-width); }
+        }
+
+        /* 经历模块 */
+        .experience-item {
+            margin-bottom: 2rem;
+            padding-left: 1rem;
+            border-left: 2px solid #e8f4f8;
+            position: relative;
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -7px;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            background-color: #4299e1;
+            border-radius: 50%;
+            border: 3px solid #ffffff;
+            box-shadow: 0 0 0 2px #e8f4f8;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.8rem;
+            align-items: center;
+        }
+
+        .exp-title {
+            font-weight: 700;
+            color: #2d3748;
+            font-size: 1.05rem;
+        }
+
+        .exp-time {
+            color: #718096;
+            font-size: 0.9rem;
+            background-color: #f8f9fa;
+            padding: 0.3rem 0.8rem;
+            border-radius: 12px;
+        }
+
+        .exp-company {
+            color: #4a5568;
+            font-size: 1rem;
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+        }
+
+        .exp-desc {
+            color: #4a5568;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .exp-desc li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+
+        .exp-desc li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #4299e1;
+            font-weight: bold;
+        }
+
+        /* 奖项模块 */
+        .award-item {
+            margin-bottom: 1.2rem;
+            padding: 1rem;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #9f7aea;
+            transition: all 0.3s ease;
+        }
+
+        .award-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .award-name {
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 0.3rem;
+        }
+
+        .award-desc {
+            color: #718096;
+            font-size: 0.9rem;
+        }
+
+        /* 个人优势模块 */
+        .advantage-item {
+            margin-bottom: 0.8rem;
+            padding: 0.8rem;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #f5fafe 0%, #eaf6fa 100%);
+        }
+
+        /* 突出特色的样式 */
+        .highlight {
+            color: #4299e1;
+            font-weight: 600;
+            position: relative;
+        }
+
+        .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #4299e1;
+            opacity: 0.3;
+            border-radius: 2px;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+
+            .main-content {
+                border-left: none;
+                padding-left: 0;
+                padding-top: 2rem;
+                border-top: 2px solid #e8f4f8;
+            }
+
+            .sidebar {
+                padding-right: 0;
+            }
+
+            .header {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .personal-info {
+                padding: 0;
+            }
+
+            .contact-info {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <!-- 头部信息 - 包含照片 -->
+        <div class="header">
+            <!-- 一寸照片区域 -->
+            <div class="photo-section">
+                <div class="photo" id="avatar">
+                    一寸照片<br>替换此处
+                </div>
+            </div>
+            
+            <!-- 个人信息 -->
+            <div class="personal-info">
+                <h1 class="name">XXX</h1>
+                <p class="title">南京财经大学 | 计算机专业 | 大二</p>
+                <div class="contact-info">
+                    <span>📱 138XXXX8888</span>
+                    <span>📧 xxx@njue.edu.cn</span>
+                    <span>📍 江苏省南京市</span>
+                    <span>🎓 大学英语四级</span>
+                </div>
+            </div>
+            
+            <!-- 占位区，保持布局平衡 -->
+            <div class="photo-section" style="visibility: hidden;"></div>
+        </div>
+
+        <!-- 主体内容 -->
+        <div class="content">
+            <!-- 左侧栏 -->
+            <div class="sidebar">
+                <!-- 基本信息 -->
+                <div class="section">
+                    <h2 class="section-title">基本信息</h2>
+                    <ul class="skills-list">
+                        <li class="skill-item">
+                            <span class="skill-name">性别</span>
+                            <span style="display: block; color: #4a5568; margin-top: 0.3rem;">男/女</span>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">出生日期</span>
+                            <span style="display: block; color: #4a5568; margin-top: 0.3rem;">2004年09月</span>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">专业排名</span>
+                            <span style="display: block; color: #4a5568; margin-top: 0.3rem;">前5% (成绩优异)</span>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">综合评价</span>
+                            <span style="display: block; color: #4a5568; margin-top: 0.3rem;">全能型优秀学生干部</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 技能专长 -->
+                <div class="section">
+                    <h2 class="section-title">核心技能</h2>
+                    <ul class="skills-list">
+                        <li class="skill-item">
+                            <span class="skill-name">前端开发 <span>85%</span></span>
+                            <div class="skill-level">
+                                <div class="skill-progress" style="--progress-width: 85%; width: 85%;"></div>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">代码编写 <span>80%</span></span>
+                            <div class="skill-level">
+                                <div class="skill-progress" style="--progress-width: 80%; width: 80%;"></div>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">计算机组装维护 <span>90%</span></span>
+                            <div class="skill-level">
+                                <div class="skill-progress" style="--progress-width: 90%; width: 90%;"></div>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">办公软件应用 <span>95%</span></span>
+                            <div class="skill-level">
+                                <div class="skill-progress" style="--progress-width: 95%; width: 90%;"></div>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">活动策划主持 <span>98%</span></span>
+                            <div class="skill-level">
+                                <div class="skill-progress" style="--progress-width: 98%; width: 98%;"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 获奖情况 -->
+                <div class="section">
+                    <h2 class="section-title">荣誉奖项</h2>
+                    <div class="award-item">
+                        <p class="award-name">计算机组装大赛 校级三等奖</p>
+                        <p class="award-desc">全校Top 5%，展现顶尖硬件实操能力</p>
+                    </div>
+                    <div class="award-item">
+                        <p class="award-name">校级优秀学生干部</p>
+                        <p class="award-desc">全校仅10人获评，表彰卓越的领导能力</p>
+                    </div>
+                    <div class="award-item">
+                        <p class="award-name">校级三好学生</p>
+                        <p class="award-desc">成绩与综合素质双优，专业排名前列</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 右侧主内容 -->
+            <div class="main-content">
+                <!-- 教育背景 -->
+                <div class="section">
+                    <h2 class="section-title">教育背景</h2>
+                    <div class="experience-item">
+                        <div class="exp-header">
+                            <span class="exp-title">南京财经大学</span>
+                            <span class="exp-time">2022 - 至今</span>
+                        </div>
+                        <div class="exp-company">计算机专业 | 本科 | 双一流学科建设高校</div>
+                        <ul class="exp-desc">
+                            <li>专业成绩<span class="highlight">年级前5%</span>，多次获得校级奖学金</li>
+                            <li>系统精通计算机基础、高级编程、前端开发等核心课程</li>
+                            <li>以<span class="highlight">高分通过</span>大学英语四级（580+），具备优秀的英文读写能力</li>
+                            <li>参与多项校级科研项目，展现突出的学术研究潜力</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 学生工作 -->
+                <div class="section">
+                    <h2 class="section-title">学生工作</h2>
+                    <div class="experience-item">
+                        <div class="exp-header">
+                            <span class="exp-title">校青年志愿者协会 部长</span>
+                            <span class="exp-time">2023 - 至今</span>
+                        </div>
+                        <div class="exp-company">南京财经大学 | 校级核心学生组织</div>
+                        <ul class="exp-desc">
+                            <li>主导策划并执行<span class="highlight">10+场校级大型志愿服务活动</span>，累计参与人数超5000人次</li>
+                            <li>担任<span class="highlight">8场校级重大活动主持人</span>，具备专业级的现场把控和公众表达能力</li>
+                            <li>统筹管理50+人志愿者团队，优化工作流程，效率提升40%</li>
+                            <li>创新志愿服务模式，获校领导高度认可，成为全校标杆</li>
+                        </ul>
+                    </div>
+                    <div class="experience-item">
+                        <div class="exp-header">
+                            <span class="exp-title">班级班长</span>
+                            <span class="exp-time">初高中阶段</span>
+                        </div>
+                        <div class="exp-company">省级示范中学</div>
+                        <ul class="exp-desc">
+                            <li>连续8年担任班长职务，展现<span class="highlight">卓越的领导力和责任心</span></li>
+                            <li>打造优秀班集体，多次获评校级/市级"先进班集体"称号</li>
+                            <li>建立完善的班级管理体系，成为全校班级管理典范</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 实践经历 -->
+                <div class="section">
+                    <h2 class="section-title">实践经历</h2>
+                    <div class="experience-item">
+                        <div class="exp-header">
+                            <span class="exp-title">金牌家教老师</span>
+                            <span class="exp-time">2023 - 2024</span>
+                        </div>
+                        <div class="exp-company">高端家教机构 | 兼职</div>
+                        <ul class="exp-desc">
+                            <li>为小学三年级学生定制<span class="highlight">个性化英语培优方案</span></li>
+                            <li>独创趣味教学法，使学生成绩提升<span class="highlight">30+分</span>，进入班级前列</li>
+                            <li>家长满意度100%，获"金牌家教"荣誉称号</li>
+                            <li>总结形成一套可复制的少儿英语教学方法论</li>
+                        </ul>
+                    </div>
+                    <div class="experience-item">
+                        <div class="exp-header">
+                            <span class="exp-title">计算机组装大赛 获奖选手</span>
+                            <span class="exp-time">2023</span>
+                        </div>
+                        <div class="exp-company">校级高水平竞赛</div>
+                        <ul class="exp-desc">
+                            <li>在50+参赛选手中脱颖而出，<span class="highlight">以15分钟极速完成</span>整机组装调试</li>
+                            <li>精准排查硬件故障，展现<span class="highlight">专家级的硬件知识储备</span></li>
+                            <li>荣获校级<span class="highlight">三等奖</span>，是年级唯一获奖的大二学生</li>
+                            <li>赛后受邀为新生开展计算机硬件知识分享讲座</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 个人优势 -->
+                <div class="section">
+                    <h2 class="section-title">核心优势</h2>
+                    <ul class="exp-desc">
+                        <li class="advantage-item"><span class="highlight">技术硬核</span>：兼具软件编程与硬件实操能力，计算机专业综合能力全校领先</li>
+                        <li class="advantage-item"><span class="highlight">领导卓越</span>：丰富的大型活动策划和团队管理经验，具备CEO级的统筹能力</li>
+                        <li class="advantage-item"><span class="highlight">表达出众</span>：专业级的主持和沟通能力，能精准传递信息并影响他人</li>
+                        <li class="advantage-item"><span class="highlight">学习顶尖</span>：超强的学习能力和自律性，所有课程均保持高分通过</li>
+                        <li class="advantage-item"><span class="highlight">成果导向</span>：所有工作和实践均以卓越成果为目标，屡获校级以上表彰</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 替换照片的方法 - 你可以将照片路径替换成自己的
+        // document.getElementById('avatar').style.backgroundImage = 'url("你的照片路径.jpg")';
+        
+        // 示例：如果你的照片文件和HTML在同一目录，命名为avatar.jpg
+        // document.getElementById('avatar').style.backgroundImage = 'url("avatar.jpg")';
+    </script>
+</body>
+</html>
